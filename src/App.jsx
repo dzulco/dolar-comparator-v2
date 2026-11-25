@@ -61,6 +61,46 @@ function App() {
     if (themeColor) themeColor.setAttribute("content", theme === "dark" ? "#101712" : "#fbfcf9");
   }, [theme]);
 
+  useEffect(() => {
+    document.title = "Cotización del dólar hoy en Argentina | DolarComparador";
+
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute("href", "https://dolarcomparador.com.ar/");
+
+    const description = document.querySelector('meta[name="description"]');
+    if (description) {
+      description.setAttribute(
+        "content",
+        "Compará la cotización del dólar hoy en Argentina: dólar oficial, blue, bolsa, CCL y cripto. Calculá cuánto recibís al comprar o vender.",
+      );
+    }
+
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute("content", "https://dolarcomparador.com.ar/");
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", "Cotización del dólar hoy en Argentina | DolarComparador");
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute(
+        "content",
+        "Compará cotizaciones del dólar en Argentina y calculá cuánto recibís con cada tipo de cambio.",
+      );
+    }
+
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) twitterTitle.setAttribute("content", "Cotización del dólar hoy en Argentina | DolarComparador");
+
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDescription) {
+      twitterDescription.setAttribute(
+        "content",
+        "Compará cotizaciones del dólar en Argentina y calculá cuánto recibís con cada tipo de cambio.",
+      );
+    }
+  }, []);
+
   function changeSort(column) {
     if (sortBy === column) {
       setSortDirection((direction) => (direction === "asc" ? "desc" : "asc"));

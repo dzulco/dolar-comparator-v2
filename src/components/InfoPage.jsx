@@ -5,6 +5,7 @@ import Header from "./Header.jsx";
 const pageContent = {
   acerca: {
     title: "Acerca de DolarComparador",
+    description: "Conocé cómo DolarComparador reúne y compara las cotizaciones del dólar en Argentina.",
     sections: [
       {
         heading: "Qué hacemos",
@@ -23,6 +24,7 @@ const pageContent = {
   },
   contacto: {
     title: "Contacto",
+    description: "Contactá a DolarComparador para consultas, sugerencias o problemas con las cotizaciones.",
     sections: [
       {
         heading: "Escribinos",
@@ -35,6 +37,7 @@ const pageContent = {
   },
   privacidad: {
     title: "Política de privacidad",
+    description: "Conocé cómo DolarComparador trata la navegación, el almacenamiento local y los servicios externos.",
     sections: [
       {
         heading: "Información y almacenamiento local",
@@ -58,6 +61,7 @@ const pageContent = {
   },
   legales: {
     title: "Aviso legal",
+    description: "Leé el aviso legal sobre las cotizaciones informativas y la calculadora de DolarComparador.",
     sections: [
       {
         heading: "Carácter informativo",
@@ -76,6 +80,7 @@ const pageContent = {
   },
   "origen-datos": {
     title: "Origen de los datos",
+    description: "Consultá las fuentes públicas utilizadas por DolarComparador para mostrar las cotizaciones.",
     sections: [
       {
         heading: "Fuentes de cotizaciones",
@@ -101,9 +106,32 @@ export default function InfoPage({ page }) {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem("theme", theme);
     document.title = `${content.title} | DolarComparador`;
+    const url = `https://dolarcomparador.com.ar/${page}`;
+
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute("href", url);
+
+    const description = document.querySelector('meta[name="description"]');
+    if (description) description.setAttribute("content", content.description);
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", `${content.title} | DolarComparador`);
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) ogDescription.setAttribute("content", content.description);
+
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute("content", url);
+
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) twitterTitle.setAttribute("content", `${content.title} | DolarComparador`);
+
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDescription) twitterDescription.setAttribute("content", content.description);
+
     const themeColor = document.querySelector('meta[name="theme-color"]');
     if (themeColor) themeColor.setAttribute("content", theme === "dark" ? "#101712" : "#fbfcf9");
-  }, [content.title, theme]);
+  }, [content.description, content.title, page, theme]);
 
   return (
     <main className="page-shell">

@@ -5,19 +5,23 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://dolarcomparador.com.ar/acerca.html</loc>
+    <loc>https://dolarcomparador.com.ar/acerca</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dolarcomparador.com.ar/contacto.html</loc>
+    <loc>https://dolarcomparador.com.ar/contacto</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dolarcomparador.com.ar/privacidad.html</loc>
+    <loc>https://dolarcomparador.com.ar/privacidad</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://dolarcomparador.com.ar/noticias.html</loc>
+    <loc>https://dolarcomparador.com.ar/legales</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dolarcomparador.com.ar/origen-datos</loc>
     <priority>0.8</priority>
   </url>
 </urlset>
