@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
 
 :root {
-  zoom: 1.28;
+  zoom: 1.408;
   font-family: "DM Sans", sans-serif;
   color: #17231d;
   background: #fbfcf9;
@@ -564,7 +564,7 @@ tbody .sale-price { color: #365e43; font-weight: 700; }
 :root[data-theme="dark"] .error-banner { background: #33251e; border-color: #594132; color: #d7b29d; }
 
 @media (max-width: 800px) {
-  :root { zoom: 1.08; }
+  :root { zoom: 1.188; }
   .page-shell { width: min(calc(100% - 40px), 760px); }
   .intro { min-height: 300px; }
   .intro-art { right: -66px; transform: scale(.8); transform-origin: right center; opacity: .8; }
@@ -579,14 +579,14 @@ tbody .sale-price { color: #365e43; font-weight: 700; }
 }
 
 @media (min-width: 801px) and (max-width: 1024px) {
-  :root { zoom: 1.08; }
+  :root { zoom: 1.188; }
   .page-shell { width: calc(100% - 48px); }
   .rate-grid { grid-template-columns: repeat(2, 1fr); }
   .intro-art { right: 0; transform: scale(.9); transform-origin: right center; }
 }
 
 @media (max-width: 520px) {
-  :root { zoom: 1; }
+  :root { zoom: 1.1; }
   .page-shell { width: calc(100% - 32px); }
   .topbar { height: 67px; }
   .brand { font-size: 21px; gap: 8px; }
